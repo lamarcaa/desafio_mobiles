@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F8F8"
+    android:paddingTop="30dp">
+
+    <!--logo da plataforma-->
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/logo"
+        android:layout_centerHorizontal="true"
+        />
+
+    <!--texto do input-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cad_nome_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/img_logo"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="32dp"
+        android:hint="Nome">
+
+        <!--input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cad_nome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--texto do input-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cad_email_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cad_nome_login"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="32dp"
+        android:hint="Email"
+        tools:ignore="NotSibling">
+
+        <!--input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cad_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropdown_menu"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cad_email_login"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="20dp"
+        >
+
+        <!-- Inside text input layout add
+              an auto complete text view
+                and make its input type to none-->
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:inputType="none"
+            android:text="Qual seu tipo de perfil?"
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <!--texto do input-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cad_senha_login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dropdown_menu"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="32dp"
+        android:hint="Senha"
+        tools:ignore="NotSibling">
+
+        <!--input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cad_senha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--texto do input-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/cad_conf_senha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cad_senha_login"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="32dp"
+        android:hint="Confirmar Senha">
+
+        <!--input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!--input-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_logar"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/cad_conf_senha"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/blue"
+        android:text="Efetuar Cadastro"
+        android:textColor="#FFF"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:rippleColor="#0072C6" />
+
+    <!--botao cadastrar-->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_voltar"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/btn_logar"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="Voltar"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:backgroundTint="#fff"
+        app:cornerRadius="20dp"
+        app:strokeColor="@color/blue"
+        app:strokeWidth="2dp" />
+
+</RelativeLayout>
