@@ -5,4 +5,6 @@
         <item>Quero cadastrar vagas</item>
     </string-array>
     <string name="vaga">Estamos à procura de um estagiário para integrar a equipe de desenvolvimento web de nossa empresa. Se você é uma pessoa apaixonada por tecnologia, gosta de desafios e está em busca de uma oportunidade para aprimorar seus conhecimentos em desenvolvimento web, essa vaga é para você! \n\nO candidato ideal deve ter conhecimentos em react e bootstrap, além de possuir habilidades em HTML, CSS e JavaScript. Também é importante ter conhecimentos em versionamento de código utilizando Git</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

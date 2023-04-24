@@ -1,62 +1,46 @@
 package pi_estagio.br
 
-import pi_estagio.br.CadastroActivity
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.Toast
-import android.content.Intent
-import com.google.android.material.button.MaterialButton
-import com.google.android.material.textfield.TextInputLayout
+import androidx.fragment.app.Fragment
+import pi_estagio.br.databinding.ActivityMainBinding
 
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        replaceFragment(Inicio())
 
-        val emailLogar = findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.login_email)
-        val senhaLogar = findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.login_senha)
-        val bntLogar = findViewById<MaterialButton>(R.id.btn_logar)
-        val btnCadastrar = findViewById<MaterialButton>(R.id.btn_cadastrar)
+        binding.bottomNavigationView.setOnItemSelectedListener {
 
-        bntLogar.setOnClickListener {
+            when (it.itemId) {
 
-            /* se n colocar o toString n pega a string digitada */
-            val email = emailLogar.editText?.text.toString()
-            val senha = senhaLogar.editText?.text.toString()
+                R.id.inicioBar -> replaceFragment(Inicio())
+                R.id.vagaBar -> replaceFragment(Vagas())
+                R.id.perfilBar -> replaceFragment(Profile())
 
+                else->{
 
-            /* se o login_email e login_senha estiver vazios n deixa passar */
-            if (email.isEmpty() || senha.isEmpty()) {
-
-                Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show()
-
-            } else {
-
-                if (email == "teste@gmail.com" && senha == "123456") {
-
-                    /* intent para entrar na home caso os dados estiverem corretos */
-                    bntLogar.setOnClickListener {
-                        val intentLogar = Intent(this, home::class.java)
-                        startActivity(intentLogar)
-                    }
-
-                } else {
-
-                    Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_SHORT).show()
                 }
-
-
             }
+            true
+
         }
 
-        /* intent para ir para o cadastro */
-        btnCadastrar.setOnClickListener {
-            val intentCadastro = Intent(this, CadastroActivity::class.java)
-            startActivity(intentCadastro)
-        }
     }
+
+    private fun replaceFragment(fragment: Fragment) {
+
+        val fragmentManager = supportFragmentManager
+        val fragmentTransaction = fragmentManager.beginTransaction()
+        fragmentTransaction.replace(R.id.frameLayout, fragment)
+        fragmentTransaction.commit()
+
+    }
+
+
 }

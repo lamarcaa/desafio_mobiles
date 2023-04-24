@@ -10,5 +10,8 @@
     <color name="gray">#C3BCBC</color>
     <color name="blue">#0CA9D6</color>
     <color name="ligth_blue">#BBD8DA</color>
+    <color name="f_black">#141414</color>
+    <color name="f_gray">#454545</color>
+    <color name="background">#E3E3E3</color>
 
 </resources>
