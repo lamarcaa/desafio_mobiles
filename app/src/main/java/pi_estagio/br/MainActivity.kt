@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
                 R.id.inicioBar -> replaceFragment(Inicio())
                 R.id.vagaBar -> replaceFragment(Vagas())
-                R.id.perfilBar -> replaceFragment(Profile())
+                R.id.perfilBar -> replaceFragment(perfil1())
 
                 else->{
 
