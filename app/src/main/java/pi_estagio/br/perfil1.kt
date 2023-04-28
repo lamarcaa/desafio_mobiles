@@ -26,7 +26,7 @@ class perfil1 : Fragment() {
         val botaoSair=view.findViewById<com.google.android.material.button.MaterialButton>(R.id.btn_sairApp);
 
         botaoEditar.setOnClickListener{
-            val intentLogar = Intent(this.context, Inicio::class.java)
+            val intentLogar = Intent(this.context, Vagas::class.java)
             startActivity(intentLogar)
 
         }

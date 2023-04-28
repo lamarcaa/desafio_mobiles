@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Pi_estagio"
         tools:targetApi="31">
         <activity
-            android:name=".home"
+            android:name=".TelaInicial"
             android:exported="false" />
         <activity
             android:name=".Cadastro"
