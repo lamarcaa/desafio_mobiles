@@ -1,119 +1,93 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<!--Elevated card-->
+<com.google.android.material.card.MaterialCardView style="?attr/materialCardViewElevatedStyle"
+    layout_width="match_parent"
+    layout_height="wrap_content"
+    cardElevation="20dp"
+    layout_margin="18dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:clickable="true"
-    android:id="@+id/text_card_view"
-    android:background="@color/white">
+    android:layout_margin="10dp">
+
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/blue" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Title, secondary and supporting text -->
-
-        <TextView
-            android:id="@+id/titulo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Área da Tecnologia"
-            android:textAlignment="center"
-            android:textAppearance="?attr/textAppearanceHeadline6"
-            android:paddingTop="5dp"
-            android:textColor="@color/f_black"/>
-
-        <TextView
-            android:id="@+id/resumo"
-            android:textColorHint="@color/f_gray"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Estágio em desenvolvimento web com react e bootstrap..."
-            android:textAlignment="center"
-            android:textAppearance="?attr/textAppearanceBody2"
-            android:paddingHorizontal="5dp"
-            android:textColor="@color/f_gray"/>
-
-        <!-- Information -->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp"
-            android:paddingHorizontal="8dp">
+            android:orientation="vertical"
+            android:padding="16dp">
 
+            <!-- Title, secondary and supporting text -->
             <TextView
+                android:id="@+id/titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Área de conhecimento:"
+                android:text="Desenvolvimento Front End"
                 android:textStyle="bold"
-                android:textColor="@color/f_gray"/>
+                android:textSize="20sp"
+                android:textAppearance="?attr/textAppearanceTitleMedium"
+                />
+            <TextView
+                android:id="@+id/resumo"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Estágio em desenvolvimento web com react e bootstrap"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                />
+
 
             <TextView
                 android:id="@+id/area_conhecimento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Tecnologia da Informação"
-                android:textColor="@color/f_gray" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp"
-            android:paddingHorizontal="8dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Remuneração:"
-                android:textStyle="bold"
-                android:textColor="@color/f_gray" />
+                android:layout_marginTop="16dp"
+                android:text="Área de Conhecimento: Tecnologia"
+                android:textSize="14sp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                />
 
             <TextView
                 android:id="@+id/remuneracao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="R$1500,00"
-                android:textColor="@color/f_gray" />
+                android:layout_marginTop="5dp"
+                android:text="Remuneração: R$ 1500,00"
+                android:textSize="14sp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp"
-            android:paddingHorizontal="8dp">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Localidade:"
-                android:textStyle="bold"
-                android:textColor="@color/f_gray" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Ribeirão Preto"
                 android:id="@+id/localidade"
-                android:textColor="@color/f_gray" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Localidade: Ribeirão Preto"
+                android:textSize="14sp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
+                android:textColor="?android:attr/textColorSecondary"
+                />
+
+
 
         </LinearLayout>
+
 
     </LinearLayout>
 
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

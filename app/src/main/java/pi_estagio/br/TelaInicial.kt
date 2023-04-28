@@ -20,9 +20,9 @@ class TelaInicial : AppCompatActivity() {
 
             when (it.itemId) {
 
-                R.id.inicioBar -> replaceFragment(Inicio())
-                R.id.vagaBar -> replaceFragment(Vagas())
-                R.id.perfilBar -> replaceFragment(perfil1())
+                R.id.inicioBar -> replaceFragment(Vagas())
+                R.id.vagaBar -> replaceFragment(CadastroVaga())
+                R.id.perfilBar -> replaceFragment(Perfil1())
 
                 else->{
 

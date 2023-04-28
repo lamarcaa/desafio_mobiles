@@ -1,59 +1,77 @@
 package pi_estagio.br
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import pi_estagio.br.Adapter.AdapterVaga
+import pi_estagio.br.model.Vaga
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [Vagas.newInstance] factory method to
- * create an instance of this fragment.
- */
 class Vagas : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_vagas, container, false)
+        val view = inflater.inflate(R.layout.fragment_vagas, container, false)
+
+        val recyclerViewVagas = view.findViewById<RecyclerView>(R.id.recyclerViewVagas)
+        recyclerViewVagas.layoutManager = LinearLayoutManager(requireContext())
+        recyclerViewVagas.setHasFixedSize(true)
+
+        /* configurar o adapter para mostrar */
+        val listaVagas: MutableList<Vaga> = mutableListOf()
+        val adapterVagas = AdapterVaga(requireContext(), listaVagas)
+        recyclerViewVagas.adapter = adapterVagas
+
+        /* recebidos do cadastroVagasActivity */
+        val tituloRecebido = requireActivity().intent.getStringExtra("titulo")
+        val areaConhecimentoRecebido = requireActivity().intent.getStringExtra("areaConhecimento")
+        val resumoRecebido = requireActivity().intent.getStringExtra("resumo")
+        val localidadeRecebido = requireActivity().intent.getStringExtra("localidade")
+        val remuneracaoRecebido = requireActivity().intent.getStringExtra("remuneracao")
+        val emailRecebido = requireActivity().intent.getStringExtra("email")
+        val telefoneRecebido = requireActivity().intent.getStringExtra("telefone")
+
+        /* cria as vagas */
+        val vaga1 = Vaga(
+            titulo = tituloRecebido ?: "valor padrão",
+            areaConhecimento = "Area de Conhecimento: " + areaConhecimentoRecebido ?: "valor padrão",
+            resumo = resumoRecebido ?: "valor padrão",
+            localidade = "Localidade: " + localidadeRecebido ?: "valor padrão",
+            remuneracao = "Remuneração: " + remuneracaoRecebido ?: "valor padrão",
+            email = "Email: " + emailRecebido ?: "valor padrão",
+            telefone = "Telefone: " + telefoneRecebido ?: "valor padrão"
+        )
+        listaVagas.add(vaga1)
+
+        val vaga2 = Vaga(
+            titulo = "Lorem ipsum",
+            areaConhecimento = "Área de Cocnhecimento: Lorem ipsum",
+            resumo = "Lorem ipsum dalet est niart tabeliu archin",
+            localidade = "Localidade: Lorem ipsum",
+            remuneracao = "Remuneração: Lorem ipsum",
+            email = "Email: lorem@ipsum.com",
+            telefone = "Telefone: 16999999999"
+        )
+        listaVagas.add(vaga1)
+        listaVagas.add(vaga1)
+        listaVagas.add(vaga1)
+        listaVagas.add(vaga1)
+        listaVagas.add(vaga2)
+        listaVagas.add(vaga2)
+
+        /* atualiza a exibição da RecyclerView */
+        adapterVagas.notifyDataSetChanged()
+
+
+        return view
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment inicio.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Vagas().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }
+
+

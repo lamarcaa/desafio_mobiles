@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="30dp">
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <TextView
+                android:id="@+id/title_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cadastre sua Vaga!"
+                android:textSize="24sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Preencha o formulário abaixo para cadastrar sua vaga na nossa plataforma"
+                android:layout_marginHorizontal="20dp"
+                android:textSize="18sp"
+                android:textAlignment="center"
+                android:textColor="@android:color/darker_gray"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"/>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cadastro_nome_empresa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nome da sua empresa"
+                android:layout_marginTop="60dp"
+
+                android:layout_below="@+id/title_textview" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cadastro_titulo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Cadastre o título da sua vaga"
+                android:layout_below="@+id/cadastro_nome_empresa" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cadastro_resumo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Resumo"
+                android:layout_below="@+id/cadastro_titulo" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cadastro_area_Conhecimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Área da vaga"
+                android:layout_below="@+id/cadastro_resumo" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cadastro_localidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Local da vaga"
+                android:layout_below="@+id/cadastro_area_Conhecimento" >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cadastro_valor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Remuneração da vaga"
+                android:layout_below="@+id/cadastro_localidade" >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:inputType="phone"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cadastro_telefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="telefone para contato"
+                android:layout_below="@+id/cadastro_valor"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:inputType="number"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/cadastro_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="email para contato"
+                android:layout_below="@+id/cadastro_telefone"
+                >
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:inputType="textEmailAddress"
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/data_inicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="   Data de inicio"
+                android:layout_below="@+id/cadastro_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dateInicioEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none"
+                    android:layout_margin="8dp"
+                    android:focusableInTouchMode="false"
+                    android:clickable="true" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/data_termino"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="   Data Final"
+                android:layout_below="@+id/data_inicio">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/dateFinalEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="date"
+                    android:layout_margin="8dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_Cadastar_Vaga"
+                style="@style/Widget.Material3.Button.ElevatedButton"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/data_termino"
+
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="#0072C6"
+                android:text="Cadastrar Vaga"
+                android:textColor="#FFF"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_voltar"
+                style="?attr/materialButtonOutlinedStyle"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@id/btn_Cadastar_Vaga"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:text="Voltar"
+                android:textColor="@color/blue"
+                android:textSize="20sp"
+                app:backgroundTint="#fff"
+                app:cornerRadius="20dp"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="2dp" />
+
+        </RelativeLayout>
+    </ScrollView>
+</FrameLayout>

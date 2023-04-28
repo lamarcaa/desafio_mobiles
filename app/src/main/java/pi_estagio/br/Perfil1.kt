@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class perfil1 : Fragment() {
+class Perfil1 : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

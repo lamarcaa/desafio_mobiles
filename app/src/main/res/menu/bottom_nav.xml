@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Inicio"
+    <item android:title="Vagas"
         android:id="@+id/inicioBar"
         android:icon="@drawable/baseline_home_24"
         />
 
-    <item android:title="Vagas"
+    <item android:title="Cadastro"
         android:id="@+id/vagaBar"
         android:icon="@drawable/baseline_work_24"
         />
