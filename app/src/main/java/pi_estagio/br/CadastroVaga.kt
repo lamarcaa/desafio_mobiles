@@ -33,6 +33,7 @@ class CadastroVaga : Fragment() {
         val cadastro_telefone = view.findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.cadastro_telefone)
         val cadastro_email = view.findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.cadastro_email)
         val btn_Cadastar_Vaga = view.findViewById<MaterialButton>(R.id.btn_Cadastar_Vaga)
+        val btn_voltar = view.findViewById<MaterialButton>(R.id.btn_voltar)
 
         btn_Cadastar_Vaga.setOnClickListener{
             val nome_empresa = cadastro_nome_empresa.editText?.text.toString()
@@ -53,7 +54,7 @@ class CadastroVaga : Fragment() {
             }else{
 
                 val intentCadastroVaga = Intent(requireContext(), Vagas::class.java)
-                intentCadastroVaga.putExtra("titulo", nome_empresa)
+                intentCadastroVaga.putExtra("nomeEmpresa", nome_empresa)
                 intentCadastroVaga.putExtra("titulo", titulo)
                 intentCadastroVaga.putExtra("resumo", resumo)
                 intentCadastroVaga.putExtra("remuneracao", valor)
@@ -65,6 +66,11 @@ class CadastroVaga : Fragment() {
 
             }
 
+        }
+
+        btn_voltar.setOnClickListener(){
+            val intentVoltarLogin = Intent(requireContext(),  TelaInicial::class.java)
+            startActivity(intentVoltarLogin)
         }
 
         return view

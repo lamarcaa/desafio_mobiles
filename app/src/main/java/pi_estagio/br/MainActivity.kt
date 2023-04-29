@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
                 if (emailLogar1 == emailCadastrado && senhaLogar1 == senhaCadastrada) {
 
                     bntLogar.setOnClickListener {
+
                         val intentVagas = Intent(this, TelaInicial::class.java)
                         startActivity(intentVagas)
                     }

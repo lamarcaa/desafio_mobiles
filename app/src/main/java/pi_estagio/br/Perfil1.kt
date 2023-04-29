@@ -22,17 +22,25 @@ class Perfil1 : Fragment() {
         val view = inflater.inflate(R.layout.fragment_perfil1, container, false);
 
 
+        val nomeConta = requireActivity().intent.getStringExtra("Nome")
+        val cad_nome_login = requireActivity().findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.cad_nome_login)
+
+
         var botaoEditar=view.findViewById<com.google.android.material.button.MaterialButton>(R.id.btn_editarPerfil);
         val botaoSair=view.findViewById<com.google.android.material.button.MaterialButton>(R.id.btn_sairApp);
 
         botaoEditar.setOnClickListener{
-            val intentLogar = Intent(this.context, Vagas::class.java)
+            val intentLogar = Intent(requireContext(), Profile::class.java)
             startActivity(intentLogar)
 
         }
 
-        botaoSair=
-        // Inflate the layout for this fragment
+        botaoSair.setOnClickListener{
+            val intentLogar = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intentLogar)
+
+        }
+
         return view;
 
     }
