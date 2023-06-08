@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "166844003304",
+    "project_id": "desafio-962f3",
+    "storage_bucket": "desafio-962f3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166844003304:android:a2a0b41cd49223e46aea5d",
+        "android_client_info": {
+          "package_name": "pi_estagio.br"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "166844003304-lf2b9meakc4r9534q2as6t9podj0nuto.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA08lfYHqq0RmtrJEs2sMxD1V83kn-xmU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "166844003304-lf2b9meakc4r9534q2as6t9podj0nuto.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,51 +5,49 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
+import com.google.firebase.auth.FirebaseAuth
+import pi_estagio.br.databinding.ActivityCadastroBinding
 
 class Cadastro : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle??) {
+    private lateinit var binding: ActivityCadastroBinding
+    private val auth = FirebaseAuth.getInstance()
+
+    override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_cadastro)
+        binding = ActivityCadastroBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val cad_nome_login =
-            findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.cad_nome_login)
-        val cad_email_login =
-            findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.cad_email_login)
-        val cad_senha_login =
-            findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.cad_senha_login)
-        val cad_conf_senha =
-            findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.cad_conf_senha)
 
-        val bntCadastrar = findViewById<MaterialButton>(R.id.btn_logar)
-        val bntVoltar = findViewById<MaterialButton>(R.id.btn_voltar)
-
-        bntCadastrar.setOnClickListener {
-            val nome = cad_nome_login.editText?.text.toString()
-            val email = cad_email_login.editText?.text.toString()
-            val senha = cad_senha_login.editText?.text.toString()
-            val confSenha = cad_conf_senha.editText?.text.toString()
+        binding.bntCadastrar.setOnClickListener {
 
             /* verificação dos campos */
-            if (nome.isEmpty() || email.isEmpty() || senha.isEmpty() || confSenha.isEmpty()) {
+            if (binding.cadSenha.text.toString().isEmpty()) {
 
                 Toast.makeText(this, "Campos nao preenchidos", Toast.LENGTH_SHORT).show()
 
-            } else {
+            } else if (binding.cadSenha.text.toString() != binding.confSenha.text.toString()){
+                Toast.makeText(this, "Senhas diferentes, confirme se as senhas estao iguais", Toast.LENGTH_SHORT).show()
+            } else{
 
-                if (senha == confSenha) {
+                    auth.createUserWithEmailAndPassword(
+                        binding.cadEmail.text.toString(),
+                        binding.cadSenha.text.toString()
+                    ).addOnCompleteListener{ result ->
+                        if (result.isSuccessful){
+                            Toast.makeText(this, "Cadastrado com sucesso", Toast.LENGTH_SHORT).show()
+                            finish()
+                        }
+                    }
 
-                    val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("email", email)
-                    intent.putExtra("senha", senha)
-                    startActivity(intent)
+//                    val intent = Intent(this, MainActivity::class.java)
+//                    intent.putExtra("email", email)
+//                    intent.putExtra("senha", senha)
+//                    startActivity(intent)
 
-                } else {
-                    Toast.makeText(this, "Senhas incorretas", Toast.LENGTH_SHORT).show()
-                }
             }
         }
 
-        bntVoltar.setOnClickListener {
+        binding.btnVoltar.setOnClickListener {
             val intentVoltarLogin = Intent(this, MainActivity::class.java)
             startActivity(intentVoltarLogin)
         }
