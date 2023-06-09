@@ -6,19 +6,15 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import pi_estagio.br.R
 
 class CardOpenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.card_material)
+        setContentView(R.layout.activity_card_aberto)
 
         /* recebidos do cadastroVagasActivity */
         val nomeEmpresaRecebido = intent.getStringExtra("nome_empresa")

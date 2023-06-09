@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class Perfil1 : Fragment() {
+class PerfilFragment : Fragment() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +19,7 @@ class Perfil1 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        val view = inflater.inflate(R.layout.fragment_perfil1, container, false);
+        val view = inflater.inflate(R.layout.fragment_perfil, container, false);
 
 
         val nomeConta = requireActivity().intent.getStringExtra("Nome")
@@ -30,7 +30,7 @@ class Perfil1 : Fragment() {
         val botaoSair=view.findViewById<com.google.android.material.button.MaterialButton>(R.id.btn_sairApp);
 
         botaoEditar.setOnClickListener{
-            val intentLogar = Intent(requireContext(), Profile::class.java)
+            val intentLogar = Intent(requireContext(), EditarPerfilFragment::class.java)
             startActivity(intentLogar)
 
         }

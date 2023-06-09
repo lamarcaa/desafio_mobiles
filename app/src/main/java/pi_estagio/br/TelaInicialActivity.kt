@@ -3,26 +3,27 @@ package pi_estagio.br
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import pi_estagio.br.databinding.TelaInicialBinding
+import pi_estagio.br.databinding.ActivityTelaInicialBinding
 
 
-class TelaInicial : AppCompatActivity() {
 
-    private lateinit var binding: TelaInicialBinding
+class TelaInicialActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityTelaInicialBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = TelaInicialBinding.inflate(layoutInflater)
+        binding = ActivityTelaInicialBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        replaceFragment(Vagas())
+        replaceFragment(VagasFragment())
 
         binding.bottomNavigationView.setOnItemSelectedListener {
 
             when (it.itemId) {
 
-                R.id.inicioBar -> replaceFragment(Vagas())
-                R.id.vagaBar -> replaceFragment(CadastroVaga())
-                R.id.perfilBar -> replaceFragment(Perfil1())
+                R.id.inicioBar -> replaceFragment(VagasFragment())
+                R.id.vagaBar -> replaceFragment(CadastroVagaActivity())
+                R.id.perfilBar -> replaceFragment(PerfilFragment())
 
                 else->{
 

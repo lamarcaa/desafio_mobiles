@@ -11,26 +11,26 @@
         android:theme="@style/Theme.Pi_estagio"
         tools:targetApi="31">
         <activity
-            android:name=".TelaInicial"
+            android:name=".TelaInicialActivity"
             android:exported="false" />
         <activity
-            android:name=".Cadastro"
+            android:name=".CadastroContaActivity"
             android:exported="false" />
         <activity
-            android:name=".CadastroVaga"
+            android:name=".CadastroVagaActivity"
             android:exported="false" />
 
         <activity
             android:name=".CardOpenActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile"
+            android:name=".EditarPerfilFragment"
             android:exported="false" />
         <activity
-            android:name=".Vagas"
+            android:name=".VagasFragment"
             android:exported="false" />
         <activity
-            android:name=".Perfil1"
+            android:name=".PerfilFragment"
             android:exported="false" />
 
         <activity
