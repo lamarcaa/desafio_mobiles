@@ -69,7 +69,7 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="#0072C6"
-        android:text="Entrar na Plataforma"
+        android:text="@string/btn_entrar"
         android:textColor="#FFF"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -85,7 +85,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Cadastrar"
+        android:text="@string/btn_cadastrar"
         android:textColor="@color/blue"
         android:textSize="20sp"
         app:backgroundTint="#fff"
@@ -93,6 +93,23 @@
         app:strokeColor="@color/blue"
         app:strokeWidth="2dp" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_recuperarSenha"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_below="@id/btn_cadastrar"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/btn_recuperarSenha"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:backgroundTint="#fff"
+        app:cornerRadius="20dp"
+        app:strokeColor="@color/blue"
+        app:strokeWidth="2dp" />
 
 
 

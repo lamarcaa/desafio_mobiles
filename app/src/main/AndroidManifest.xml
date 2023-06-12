@@ -33,6 +33,11 @@
             android:name=".PerfilFragment"
             android:exported="false" />
 
+        <activity android:name=".RecuperarSenhaActivity"
+            android:exported="false">
+        </activity>
+
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

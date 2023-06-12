@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import android.content.Intent
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthEmailException
 import pi_estagio.br.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -46,6 +47,11 @@ class MainActivity : AppCompatActivity() {
         binding.btnCadastrar.setOnClickListener(){
             val intentCadastrar = Intent(this, CadastroContaActivity::class.java)
             startActivity(intentCadastrar)
+        }
+
+        binding.btnRecuperarSenha.setOnClickListener (){
+            val intentRecuperarSenha = Intent(this, RecuperarSenhaActivity::class.java)
+            startActivity(intentRecuperarSenha)
         }
 
     }

@@ -5,17 +5,23 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import pi_estagio.br.databinding.FragmentEdicaoPerfilBinding
 
 class EditarPerfilFragment : Fragment() {
 
+    private lateinit var binding: FragmentEdicaoPerfilBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        val view =  inflater.inflate(R.layout.fragment_edicao_perfil, container, false)
-        return view;
+    ): View {
 
+        binding = FragmentEdicaoPerfilBinding.inflate(inflater, container, false)
+        val view = binding.root
+
+
+
+
+        return view
     }
 
 }

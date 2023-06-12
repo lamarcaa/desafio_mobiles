@@ -5,10 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.google.firebase.auth.FirebaseAuth
+import pi_estagio.br.databinding.FragmentPerfilBinding
 
 class PerfilFragment : Fragment() {
 
-
+   private lateinit var binding: FragmentPerfilBinding
+   private val auth= FirebaseAuth.getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -17,31 +20,27 @@ class PerfilFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-
-        val view = inflater.inflate(R.layout.fragment_perfil, container, false);
-
-
-        val nomeConta = requireActivity().intent.getStringExtra("Nome")
-        val cad_nome_login = requireActivity().findViewById<com.google.android.material.textfield.TextInputLayout>(R.id.cad_nome_login)
+    ): View {
+        binding = FragmentPerfilBinding.inflate(inflater, container, false)
+        val view = binding.root
 
 
-        var botaoEditar=view.findViewById<com.google.android.material.button.MaterialButton>(R.id.btn_editarPerfil);
-        val botaoSair=view.findViewById<com.google.android.material.button.MaterialButton>(R.id.btn_sairApp);
 
-        botaoEditar.setOnClickListener{
-            val intentLogar = Intent(requireContext(), EditarPerfilFragment::class.java)
-            startActivity(intentLogar)
-
+        binding.btnEditarPerfil.setOnClickListener{
+            val intentEditarPerfil = Intent(requireContext(), EditarPerfilFragment::class.java)
+            startActivity(intentEditarPerfil)
         }
 
-        botaoSair.setOnClickListener{
+        binding.btnSairApp.setOnClickListener{
+            auth.signOut()
             val intentLogar = Intent(requireContext(), MainActivity::class.java)
             startActivity(intentLogar)
-
         }
 
-        return view;
+        binding.btnDeletarConta.setOnClickListener{
+        }
+
+        return view
 
     }
 

@@ -6,7 +6,8 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
+    android:background="@color/background"
+    tools:context=".VagasFragment">
 
 
 
@@ -16,6 +17,7 @@
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/activity_card_resumo"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

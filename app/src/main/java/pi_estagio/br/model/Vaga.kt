@@ -4,10 +4,11 @@ import android.provider.ContactsContract.Data
 import com.google.firebase.Timestamp
 
 data class Vaga (
+    val id: String,
     val anunciante_vaga: String,
     val area_conhecimento: String,
-    val data_inicio: Timestamp,
-    val data_termino: Timestamp,
+    val data_inicio: String,
+    val data_termino: String,
     val email_vaga: String,
     val localidade_vaga: String,
     val remuneracao_vaga: String,

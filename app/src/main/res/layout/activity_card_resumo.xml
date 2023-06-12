@@ -7,7 +7,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    tools:context=".VagasFragment"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
 
@@ -27,23 +29,22 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Title, secondary and supporting text -->
             <TextView
                 android:id="@+id/titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Desenvolvimento Front End"
                 android:textStyle="bold"
+                android:text="@string/anunciante"
                 android:textSize="20sp"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 />
             <TextView
                 android:id="@+id/resumo"
                 android:textSize="14sp"
+                android:text="@string/resumo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Estágio em desenvolvimento web com react e bootstrap"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 />
@@ -54,8 +55,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Área de Conhecimento: Tecnologia"
                 android:textSize="14sp"
+                android:text="@string/area"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 />
@@ -65,7 +66,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Remuneração: R$ 1500,00"
+                android:text="@string/remuneracao"
                 android:textSize="14sp"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
@@ -77,8 +78,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="Localidade: Ribeirão Preto"
                 android:textSize="14sp"
+                android:text="@string/localidade"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 />

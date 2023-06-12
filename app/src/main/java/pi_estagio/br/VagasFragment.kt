@@ -1,46 +1,67 @@
 package pi_estagio.br
+
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import pi_estagio.br.Adapter.AdapterVaga
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import pi_estagio.br.Adapter.VagaAdapter
+import pi_estagio.br.databinding.ActivityCardResumoBinding
+import pi_estagio.br.databinding.ActivityTelaInicialBinding
+import pi_estagio.br.databinding.FragmentListaVagasBinding
 import pi_estagio.br.model.Vaga
 
 
 class VagasFragment : Fragment() {
 
-
+    private lateinit var binding: FragmentListaVagasBinding
+    private val db = Firebase.firestore
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_recycle_view_vagas, container, false)
-
-        val recyclerViewVagas = view.findViewById<RecyclerView>(R.id.recyclerViewVagas)
-        recyclerViewVagas.layoutManager = LinearLayoutManager(requireContext())
-        recyclerViewVagas.setHasFixedSize(true)
-
-        /* configurar o adapter para mostrar */
-        val listaVagas: MutableList<Vaga> = mutableListOf()
-        val adapterVagas = AdapterVaga(requireContext(), listaVagas)
-        recyclerViewVagas.adapter = adapterVagas
-
-        /* recebidos do cadastroVagasActivity */
-        val tituloRecebido = requireActivity().intent.getStringExtra("titulo")
-        val areaConhecimentoRecebido = requireActivity().intent.getStringExtra("areaConhecimento")
-        val resumoRecebido = requireActivity().intent.getStringExtra("resumo")
-        val localidadeRecebido = requireActivity().intent.getStringExtra("localidade")
-        val remuneracaoRecebido = requireActivity().intent.getStringExtra("remuneracao")
-        val emailRecebido = requireActivity().intent.getStringExtra("email")
-        val telefoneRecebido = requireActivity().intent.getStringExtra("telefone")
+    ): View {
+        binding = FragmentListaVagasBinding.inflate(inflater, container, false)
+        val view = binding.root
 
 
-        /* atualiza a exibição da RecyclerView */
-        adapterVagas.notifyDataSetChanged()
+        val vagaAdapter = VagaAdapter { vaga ->
+            db.collection("Vagas")
+                .document(vaga.id)
+        }
 
+        binding.recyclerViewVagas.adapter = vagaAdapter
+        binding.recyclerViewVagas.layoutManager = LinearLayoutManager(requireContext())
+
+
+        db.collection("Vagas").addSnapshotListener { value, error ->
+            if (value != null) {
+                val firebaseResult = value
+                val listaVaga: List<Vaga> = firebaseResult.map { document ->
+                    Vaga(
+                        document.getString("id").toString() ?: "",
+                        document.getString("anunciante_vaga").toString() ?: "",
+                        document.getString("area_conhecimento").toString() ?: "",
+                        document.getString("data_inicio").toString() ?: "",
+                        document.getString("data_termino").toString() ?: "",
+                        document.getString("email_vaga").toString() ?: "",
+                        document.getString("localidade_vaga").toString() ?: "",
+                        document.getString("remuneracao_vaga").toString() ?: "",
+                        document.getString("resumo_vaga").toString() ?: "",
+                        document.getString("telefone_vaga").toString() ?: "",
+                        document.getString("titulo_vaga").toString() ?: "",
+
+                        )
+                }
+                vagaAdapter.atualizarVagas(listaVaga)
+            } else {
+                Toast.makeText(requireContext(), "falha na requisicao", Toast.LENGTH_LONG).show()
+            }
+        }
 
         return view
     }

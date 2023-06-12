@@ -4,7 +4,31 @@
         <item>Quero procurar vagas</item>
         <item>Quero cadastrar vagas</item>
     </string-array>
-    <string name="vaga">Estamos à procura de um estagiário para integrar a equipe de desenvolvimento web de nossa empresa. Se você é uma pessoa apaixonada por tecnologia, gosta de desafios e está em busca de uma oportunidade para aprimorar seus conhecimentos em desenvolvimento web, essa vaga é para você! \n\nO candidato ideal deve ter conhecimentos em react e bootstrap, além de possuir habilidades em HTML, CSS e JavaScript. Também é importante ter conhecimentos em versionamento de código utilizando Git</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!--    tela de login-->
+    <string name="btn_entrar"> Entrar</string>
+    <string name="btn_cadastrar"> Cadastrar</string>
+    <string name="btn_recuperarSenha"> Recuperar Senha</string>
+
+    <!--    Recuperação email  -->
+    <string name="email">Email</string>
+    <string name="msg_email">Escolha um email</string>
+    <string name="enviar_email">Enviar Email</string>
+    <string name="Voltar">Voltar</string>
+
+    <!--Vaga resumida-->
+    <string name="anunciante">Anunciante: %1$s</string>
+    <string name="resumo">resumo: %1$s</string>
+    <string name="area">Area: %1$s</string>
+    <string name="remuneracao">Remuneração: %1$s</string>
+    <string name="localidade">Localidade: %1$s</string>
+
+    <!--    Perfil-->
+    <string name="dadosPerfil">SUAS INFORMAÇÕES</string>
+    <string name="nomePerfil">Nome: %1$s</string>
+    <string name="emailPerfl">Email: %1$s</string>
+    <string name="editarPerfil">Editar</string>
+    <string name="sairPerfil">Sair</string>
+    <string name="deletarPerfil">DELETAR CONTA</string>
+
 </resources>
