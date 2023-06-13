@@ -1,172 +1,203 @@
-<!--Card-->
-<com.google.android.material.card.MaterialCardView android:id="@+id/card"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="18dp"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    tools:context=".CardOpenActivity"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <!-- Conteúdo acima do quadrado -->
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="0.25">
 
+        <!-- Adicione aqui o conteúdo acima do quadrado -->
 
-        <LinearLayout
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pessoas_card"
+            android:bottomLeftRadius="30dp"
+            android:bottomRightRadius="30dp"/>
+    </RelativeLayout>
 
-            <!-- Title, secondary and supporting text -->
-            <TextView
-                android:id="@+id/tituloOpen"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Card"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:textAppearance="?attr/textAppearanceTitleMedium"
-                />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.7">
 
-            <TextView
-                android:id="@+id/resumo"
-                android:textSize="14sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="The following example shows an outlined card."
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+        <!-- Imagem de fundo -->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:textSize="14sp"
-                android:text="INFORMAÇÕES DA VAGA"
-                android:textStyle="bold"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="30dp">
 
-            <TextView
-                android:id="@+id/nome_empresa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="14sp"
-                android:text="Nome da Empresa: Microsoft"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+            <!-- Shape para os cantos arredondados na parte superior -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/shape_borda_arredondada" />
 
-            <TextView
-                android:id="@+id/area_Conhecimento"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="14sp"
-                android:text="Área de Conhecimento: Tecnologia"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <TextView
-                android:id="@+id/valor"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="14sp"
-                android:text="Remuneração: R$ 1500.00"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                <!-- Title, secondary and supporting text -->
 
-            <TextView
-                android:id="@+id/localidade"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="14sp"
-                android:text="Localidade: Ribeirão Preto"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                <TextView
+                    android:id="@+id/tituloOpen"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="#245C69"
+                    android:text="Estágio em Desenvolvimento Web"
+                    android:textAppearance="?attr/textAppearanceTitleMedium"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:textSize="14sp"
-                android:text="PERÍODO DE INSCRIÇÃO"
-                android:textStyle="bold"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                <TextView
+                    android:id="@+id/resumo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Estágio em desenvolvimento web utilizando html, css, javascript e react (diferencial)."
+                    android:textAlignment="center"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="#7D7D7D"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="14sp"
-                android:text="Data de Início: 01/04/2023"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                <!-- INFORMAÇÕES DA VAGA -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:text="INFORMAÇÕES DA VAGA"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="#245C69"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="14sp"
-                android:text="Data de Término: 29/04/2023"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                <TextView
+                    android:id="@+id/nome_empresa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nome da Empresa: Microsoft"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14sp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:textSize="14sp"
-                android:text="ENTRE EM CONTATO:"
-                android:textStyle="bold"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                <TextView
+                    android:id="@+id/area_Conhecimento"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Área de Conhecimento: Tecnologia"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary" />
 
-            <TextView
-                android:id="@+id/telefone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:text="Telefone: 16997310678"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                <TextView
+                    android:id="@+id/valor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Remuneração: R$ 1500.00"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary" />
 
-            <TextView
-                android:id="@+id/email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:text="Email: g.lamarca@outlook.com"
-                android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
-                />
+                <TextView
+                    android:id="@+id/localidade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Localidade: Ribeirão Preto"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary" />
 
+                <!-- PERÍODO DE INSCRIÇÃO -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp"
+                    android:text="PERÍODO DE INSCRIÇÃO"
+                    android:textStyle="bold"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="#245C69" />
 
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Data de Início: 01/04/2023"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14sp" />
 
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Data de Término: 29/04/2023"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary" />
 
+                <!-- ENTRE EM CONTATO -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:gravity="start"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:textSize="18sp"
+                    android:text="ENTRE EM CONTATO:"
+                    android:textStyle="bold"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="#245C69" />
 
-    </LinearLayout>
+                <TextView
+                    android:id="@+id/telefone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="14sp"
+                    android:text="Telefone: 16997310678"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary" />
 
-</com.google.android.material.card.MaterialCardView>
+                <TextView
+                    android:id="@+id/email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email: g.lamarca@outlook.com"
+                    android:textAppearance="?attr/textAppearanceBodyMedium"
+                    android:textColor="?android:attr/textColorSecondary"
+                    android:textSize="14sp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_voltar"
+                    style="@style/Widget.Material3.Button.ElevatedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="20dp"
+                    android:backgroundTint="#50CDE8"
+                    android:text="Voltar"
+                    android:textColor="#FFF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </RelativeLayout>
+
+</LinearLayout>
