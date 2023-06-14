@@ -13,8 +13,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/logo"
-        android:layout_centerHorizontal="true"
-        />
+        android:layout_centerHorizontal="true"/>
 
     <!--texto do input-->
     <com.google.android.material.textfield.TextInputLayout
@@ -47,7 +46,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:backgroundTint="#0072C6"
+        android:backgroundTint="@color/primary_blue"
         android:text="@string/enviar_email"
         android:textColor="#FFF"
         android:textSize="20sp"
@@ -64,11 +63,11 @@
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:text="@string/Voltar"
-        android:textColor="@color/blue"
+        android:textColor="@color/primary_blue"
         android:textSize="20sp"
         app:backgroundTint="#fff"
         app:cornerRadius="20dp"
-        app:strokeColor="@color/blue"
+        app:strokeColor="@color/primary_blue"
         app:strokeWidth="2dp" />
 
 </RelativeLayout>

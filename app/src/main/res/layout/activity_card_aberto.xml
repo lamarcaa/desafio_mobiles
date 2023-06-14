@@ -68,7 +68,7 @@
                     android:text="Estágio em desenvolvimento web utilizando html, css, javascript e react (diferencial)."
                     android:textAlignment="center"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="#7D7D7D"
+                    android:textColor="@color/txt_color_1"
                     android:textSize="14sp" />
 
                 <!-- INFORMAÇÕES DA VAGA -->

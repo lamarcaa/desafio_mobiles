@@ -12,22 +12,29 @@
     xmlns:tools="http://schemas.android.com/tools">
 
 
-
     <View
         android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@color/blue" />
+        android:layout_height="165dp"
+        android:background="#fff" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="110dp"
+            android:layout_height="165dp"
+            android:src="@drawable/icon_card"
+            android:layout_marginLeft="50px"
+            android:layout_marginRight="50px"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
+            android:paddingTop="80px"
+            >
 
             <TextView
                 android:id="@+id/titulo"
@@ -36,6 +43,7 @@
                 android:textStyle="bold"
                 android:text="@string/anunciante"
                 android:textSize="20sp"
+                android:textColor="@color/secondary_blue"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 />
             <TextView
@@ -44,9 +52,8 @@
                 android:text="@string/resumo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/txt_color_1"
                 />
 
 
@@ -54,22 +61,20 @@
                 android:id="@+id/area_conhecimento"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
                 android:textSize="14sp"
                 android:text="@string/area"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/txt_color_1"
                 />
 
             <TextView
                 android:id="@+id/remuneracao"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:text="@string/remuneracao"
                 android:textSize="14sp"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/txt_color_1"
                 />
 
 
@@ -77,16 +82,17 @@
                 android:id="@+id/localidade"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
                 android:textSize="14sp"
                 android:text="@string/localidade"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
-                android:textColor="?android:attr/textColorSecondary"
+                android:textColor="@color/txt_color_1"
                 />
 
 
 
         </LinearLayout>
+
+
 
 
     </LinearLayout>
