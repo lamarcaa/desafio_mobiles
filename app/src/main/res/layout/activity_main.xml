@@ -24,7 +24,7 @@
         android:layout_below="@id/img_logo"
         android:layout_marginTop="30dp"
         android:layout_marginHorizontal="32dp"
-        android:hint="Email">
+        android:hint="@string/email">
 
         <!--input-->
         <com.google.android.material.textfield.TextInputEditText
@@ -43,7 +43,7 @@
         android:layout_below="@id/ly_login_email"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="32dp"
-        android:hint="Senha">
+        android:hint="@string/senha">
 
         <!--input-->
         <com.google.android.material.textfield.TextInputEditText

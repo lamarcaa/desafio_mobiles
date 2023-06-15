@@ -6,56 +6,74 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import pi_estagio.br.Adapter.VagaAdapter
+import pi_estagio.br.databinding.ActivityCardAbertoBinding
+import pi_estagio.br.databinding.FragmentListaVagasBinding
+import pi_estagio.br.model.Vaga
 
 class CardOpenActivity : AppCompatActivity() {
 
+    private val vagas: MutableList<Vaga> = mutableListOf()
+    val db = Firebase.firestore
+
+    private lateinit var binding: ActivityCardAbertoBinding
+    private lateinit var bindingCards: FragmentListaVagasBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_card_aberto)
 
-        /* recebidos do cadastroVagasActivity */
-        val nomeEmpresaRecebido = intent.getStringExtra("nome_empresa")
-        val telefoneRecebido = intent.getStringExtra("telefone")
-        val emailRecebido = intent.getStringExtra("email")
-        val tituloRecebido = intent.getStringExtra("titulo")
-        val resumoRecebido = intent.getStringExtra("resumo")
-        val remuneracaoRecebido = intent.getStringExtra("remuneracao")
-        val areaConhecimentoRecebido = intent.getStringExtra("areaConhecimento")
-        val localidadeRecebido = intent.getStringExtra("localidade")
+        binding = ActivityCardAbertoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        /* colocar os valores nos elementos do layout */
-        val tituloOpen = findViewById<TextView>(R.id.tituloOpen)
-        tituloOpen.text = tituloRecebido
 
-        val area_Conhecimento = findViewById<TextView>(R.id.area_Conhecimento)
-        area_Conhecimento.text = areaConhecimentoRecebido
+        val newTitulo = intent.getStringExtra("tituloCardOpen")
+        val newAnunciante = intent.getStringExtra("anuncianteCardOpen")
+        val newAreaConhecimento = intent.getStringExtra("areaCardOpen")
+        val newRemuneracao = intent.getStringExtra("valorRemuneracaoCardOpen")
+        val newLocalidade = intent.getStringExtra("localidadeCardOpen")
 
-        val resumo = findViewById<TextView>(R.id.resumo)
-        resumo.text = resumoRecebido
+        val newDataInicio = intent.getStringExtra("dataInicioCardOpen")
+        val newDataFinal = intent.getStringExtra("dataTerminoCardOpen")
+        val newDescricao = intent.getStringExtra("descricaoVagaCardOpen")
 
-        val localidade = findViewById<TextView>(R.id.localidade)
-        localidade.text = localidadeRecebido
+        val newEmail = intent.getStringExtra("emailContatoCardOpen")
+        val newTelefone = intent.getStringExtra("telefoneContatoCardOpen")
 
-        val valor = findViewById<TextView>(R.id.valor)
-        valor.text = remuneracaoRecebido
+        binding.tituloOpen.text = getString(R.string.dadoTituloVaga, newTitulo)
+        binding.resumo.text = getString(R.string.dadoResumoVaga, newAnunciante)
+        binding.nomeEmpresa.text = getString(R.string.dadoNomeEmpresa, newAreaConhecimento)
+        binding.areaConhecimento.text = getString(R.string.dadoAreaConhecimentoVaga, newRemuneracao)
+        binding.valor.text = getString(R.string.dadoValorVaga, newLocalidade)
 
-        val telefone = findViewById<TextView>(R.id.telefone)
-        telefone.text = telefoneRecebido
+        binding.localidade.text = getString(R.string.dadoLocalidadeVaga, newLocalidade)
+        binding.dataInicioVaga.text = getString(R.string.dadoDataInicioVaga, newDataFinal)
+        binding.dataTerminoVaga.text = getString(R.string.dadoDataTerminoVaga, newDescricao)
+
+        binding.telefone.text = getString(R.string.dadoTelefoneVaga, newTelefone)
+        binding.email.text = getString(R.string.dadoEmailVaga, newEmail)
+
+
+        val telefone = binding.telefone
+        telefone.text = getString(R.string.dadoTelefoneVaga, newTelefone)
 
         telefone.setOnClickListener {
-            if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(
+                    this,
+                    Manifest.permission.CALL_PHONE
+                ) != PackageManager.PERMISSION_GRANTED
+            ) {
                 ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.CALL_PHONE), 1)
             } else {
-                val intentLigacao = Intent(Intent.ACTION_CALL, Uri.parse("tel:$telefoneRecebido"))
+                val intentLigacao = Intent(Intent.ACTION_CALL, Uri.parse("tel:$telefone"))
                 startActivity(intentLigacao)
             }
         }
 
-        val nome_empresa = findViewById<TextView>(R.id.nome_empresa)
-        nome_empresa.text = nomeEmpresaRecebido
 
     }
 }

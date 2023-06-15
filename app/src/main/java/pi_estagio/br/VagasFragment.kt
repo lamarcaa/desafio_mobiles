@@ -21,21 +21,38 @@ class VagasFragment : Fragment() {
 
     private lateinit var binding: FragmentListaVagasBinding
     private val db = Firebase.firestore
+//    private lateinit var adapterMinhasVaga: VagaAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentListaVagasBinding.inflate(inflater, container, false)
         val view = binding.root
+//
+//        val deleteCard = VagaAdapter{ vaga ->
+//            db.collection("Vagas")
+//                .document(vaga.id)
+//                .delete()
+//        }
 
-
-        val vagaAdapter = VagaAdapter { vaga ->
-            db.collection("Vagas")
-                .document(vaga.id)
+        val vagaAdapter = VagaAdapter { vaga, deletar ->
+            if (deletar) {
+                db.collection("Vagas")
+                    .document(vaga.id)
+                    .delete().addOnCompleteListener {
+                        Toast.makeText(requireContext(), "Foi deletado", Toast.LENGTH_LONG).show()
+                    }.addOnFailureListener {
+                        Toast.makeText(requireContext(), "falha na requisicao", Toast.LENGTH_LONG)
+                            .show()
+                    }
+            }
         }
 
+//        binding.recyclerViewVagas.adapter = deleteCard
         binding.recyclerViewVagas.adapter = vagaAdapter
         binding.recyclerViewVagas.layoutManager = LinearLayoutManager(requireContext())
+
 
 
         db.collection("Vagas").addSnapshotListener { value, error ->
@@ -43,7 +60,7 @@ class VagasFragment : Fragment() {
                 val firebaseResult = value
                 val listaVaga: List<Vaga> = firebaseResult.map { document ->
                     Vaga(
-                        document.getString("id").toString() ?: "",
+                        document.id,
                         document.getString("anunciante_vaga").toString() ?: "",
                         document.getString("area_conhecimento").toString() ?: "",
                         document.getString("data_inicio").toString() ?: "",
@@ -54,14 +71,16 @@ class VagasFragment : Fragment() {
                         document.getString("resumo_vaga").toString() ?: "",
                         document.getString("telefone_vaga").toString() ?: "",
                         document.getString("titulo_vaga").toString() ?: "",
-
                         )
                 }
                 vagaAdapter.atualizarVagas(listaVaga)
             } else {
                 Toast.makeText(requireContext(), "falha na requisicao", Toast.LENGTH_LONG).show()
             }
+
         }
+
+
 
         return view
     }

@@ -24,9 +24,6 @@
             android:name=".CardOpenActivity"
             android:exported="false" />
         <activity
-            android:name=".EditarPerfilFragment"
-            android:exported="false" />
-        <activity
             android:name=".VagasFragment"
             android:exported="false" />
         <activity
@@ -34,6 +31,9 @@
             android:exported="false" />
 
         <activity android:name=".RecuperarSenhaActivity"
+            android:exported="false">
+        </activity>
+        <activity android:name=".EditarPerfilActivity"
             android:exported="false">
         </activity>
 

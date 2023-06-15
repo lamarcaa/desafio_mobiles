@@ -10,7 +10,9 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import pi_estagio.br.Adapter.VagaAdapter
 import pi_estagio.br.databinding.FragmentCadastroVagaBinding
+import pi_estagio.br.model.Vaga
 
 class CadastroVagaActivity : Fragment() {
 

@@ -22,7 +22,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="16dp"
-                android:text="Cadastre sua Vaga!"
+                android:text="@string/tituloCadastroVaga"
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
@@ -33,7 +33,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="50dp"
-                android:text="Preencha o formulário abaixo para cadastrar sua vaga na nossa plataforma"
+                android:text="@string/mensagemCadastroVaga"
                 android:textAlignment="center"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="18sp" />
@@ -45,8 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/title_textview"
                 android:layout_marginTop="60dp"
-
-                android:hint="Nome da sua empresa">
+                android:hint="@string/nomeEmpresa">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/anunciante_vaga"
@@ -62,7 +61,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cadastro_nome_empresa"
-                android:hint="Cadastre o título da sua vaga">
+                android:hint="@string/tituloVaga">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/titulo_vaga"
@@ -76,7 +75,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cadastro_titulo"
-                android:hint="Resumo">
+                android:hint="@string/resumoVaga">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/resumo_vaga"
@@ -90,7 +89,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cadastro_resumo"
-                android:hint="Área da vaga">
+                android:hint="@string/areaVaga">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/area_conhecimento_vaga"
@@ -106,7 +105,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cadastro_area_Conhecimento"
-                android:hint="Local da vaga">
+                android:hint="@string/localVaga">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/localidade_vaga"
@@ -122,15 +121,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cadastro_localidade"
-                android:hint="Remuneração da vaga">
+                android:hint="@string/remuneracaoVaga">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/remuneracao_vaga"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:inputType="phone"
-                    />
+                    android:inputType="phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -138,7 +136,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cadastro_valor"
-                android:hint="telefone para contato">
+                android:hint="@string/telefoneContatoVaga">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/telefone_vaga"
@@ -153,7 +151,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cadastro_telefone"
-                android:hint="email para contato">
+                android:hint="@string/emailContato">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/email_vaga"
@@ -168,14 +166,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/cadastro_email"
-                android:hint="   Data Final">
+                android:hint="@string/dataFinalVaga">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/data_final_vaga"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    />
+                    android:layout_margin="8dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -192,7 +189,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="10dp"
                 android:backgroundTint="#0072C6"
-                android:text="Cadastrar Vaga"
+                android:text="@string/cadastrarVaga"
                 android:textColor="#FFF"
                 android:textSize="20sp"
                 android:textStyle="bold" />
@@ -208,7 +205,7 @@
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
-                android:text="Voltar"
+                android:text="@string/Voltar"
                 android:textColor="@color/blue"
                 android:textSize="20sp"
                 app:backgroundTint="#fff"

@@ -108,6 +108,7 @@
                 />
 
             <TextView
+                android:id="@+id/dataInicioVaga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -118,6 +119,7 @@
                 />
 
             <TextView
+                android:id="@+id/dataTerminoVaga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -161,6 +163,20 @@
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary"
                 />
+
+            <Button
+                android:id="@+id/btn_editar_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/editarPerfil">
+            </Button>
+
+            <Button
+                android:id="@+id/btn_deletar_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deletar">
+            </Button>
 
 
 

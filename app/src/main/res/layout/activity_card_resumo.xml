@@ -34,7 +34,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="@string/anunciante"
+                android:text="@string/anuncianteVaga"
                 android:textSize="20sp"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 />
@@ -84,6 +84,20 @@
                 android:textColor="?android:attr/textColorSecondary"
                 />
 
+                <Button
+                    android:id="@+id/verInfos"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mais informacoes">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/btn_deletar_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Deletar">
+                </Button>
 
 
         </LinearLayout>

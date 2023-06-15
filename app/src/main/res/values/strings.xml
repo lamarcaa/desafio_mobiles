@@ -10,6 +10,44 @@
     <string name="btn_cadastrar"> Cadastrar</string>
     <string name="btn_recuperarSenha"> Recuperar Senha</string>
 
+    <!--    tela de cadastro Usuario-->
+
+    <string name="nome">Nome</string>
+    <string name="senha">Senha</string>
+    <string name="confirmarSenha">Confirmar Senha</string>
+    <string name="interessado">INTERESSADO</string>
+    <string name="anunciante">ANUNCIANTE</string>
+    <string name="efetuarCadastro">Efetuar Cadastro</string>
+
+    <!--    tela de cadastro vaga-->
+
+    <string name="tituloCadastroVaga">Cadastre sua vaga</string>
+    <string name="mensagemCadastroVaga">Preencha o formulário abaixo para cadastrar sua vaga na nossa plataforma</string>
+    <string name="nomeEmpresa">Nome da sua empresa</string>
+    <string name="tituloVaga">Cadastre o título da sua vaga</string>
+    <string name="resumoVaga">Resumo</string>
+    <string name="areaVaga">Área da vaga</string>
+    <string name="localVaga">Local da vaga</string>
+    <string name="remuneracaoVaga">Remuneração da vaga</string>
+    <string name="telefoneContatoVaga">Telefone para contato</string>
+    <string name="emailContato">Email para contato</string>
+    <string name="dataFinalVaga">Data Final</string>
+    <string name="cadastrarVaga">Cadastrar Vaga</string>
+
+    <!--Informacoes card-->
+
+    <string name="dadoTituloVaga">%1$s</string>
+    <string name="dadoAreaConhecimentoVaga">%1$s</string>
+    <string name="dadoResumoVaga">%1$s</string>
+    <string name="dadoLocalidadeVaga">%1$s</string>
+    <string name="dadoValorVaga">%1$s</string>
+    <string name="dadoTelefoneVaga">%1$s</string>
+    <string name="dadoEmailVaga">%1$s</string>
+    <string name="dadoDataInicioVaga">%1$s</string>
+    <string name="dadoDataTerminoVaga">%1$s</string>
+    <string name="dadoNomeEmpresa">%1$s</string>
+
+
     <!--    Recuperação email  -->
     <string name="email">Email</string>
     <string name="msg_email">Escolha um email</string>
@@ -17,7 +55,7 @@
     <string name="Voltar">Voltar</string>
 
     <!--Vaga resumida-->
-    <string name="anunciante">Anunciante: %1$s</string>
+    <string name="anuncianteVaga">Anunciante: %1$s</string>
     <string name="resumo">resumo: %1$s</string>
     <string name="area">Area: %1$s</string>
     <string name="remuneracao">Remuneração: %1$s</string>
@@ -30,5 +68,6 @@
     <string name="editarPerfil">Editar</string>
     <string name="sairPerfil">Sair</string>
     <string name="deletarPerfil">DELETAR CONTA</string>
+    <string name="salvar">Salvar</string>
 
 </resources>

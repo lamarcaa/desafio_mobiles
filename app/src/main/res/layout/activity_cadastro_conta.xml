@@ -24,7 +24,7 @@
         android:layout_below="@id/img_logo"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="32dp"
-        android:hint="Nome">
+        android:hint="@string/nome">
 
         <!--input-->
         <com.google.android.material.textfield.TextInputEditText
@@ -42,7 +42,7 @@
         android:layout_below="@id/cad_nome_login"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="32dp"
-        android:hint="Email"
+        android:hint="@string/email"
         tools:ignore="NotSibling">
 
         <!--input-->
@@ -62,7 +62,7 @@
         android:layout_below="@id/cad_email_login"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="32dp"
-        android:hint="Senha"
+        android:hint="@string/senha"
         tools:ignore="NotSibling">
 
         <!--input-->
@@ -81,7 +81,7 @@
         android:layout_below="@id/cad_senha_login"
         android:layout_marginTop="20dp"
         android:layout_marginHorizontal="32dp"
-        android:hint="Confirmar Senha">
+        android:hint="@string/confirmarSenha">
 
         <!--input-->
         <com.google.android.material.textfield.TextInputEditText
@@ -92,20 +92,39 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
+    <CheckBox
+        android:layout_marginHorizontal="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/cad_conf_senha"
+        android:id="@+id/tipoInteressado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:text="@string/interessado"/>
+
+    <CheckBox
+        android:id="@+id/tipoAnunciante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cad_conf_senha"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/tipoInteressado"
+        android:text="@string/anunciante" />
     <!--input-->
     <com.google.android.material.button.MaterialButton
         android:id="@+id/bntCadastrar"
         style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@id/cad_conf_senha"
+        android:layout_below="@id/tipoAnunciante"
         android:layout_centerInParent="true"
         android:layout_marginStart="20dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
         android:backgroundTint="@color/blue"
-        android:text="Efetuar Cadastro"
+        android:text="@string/efetuarCadastro"
         android:textColor="#FFF"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -122,7 +141,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:text="Voltar"
+        android:text="@string/Voltar"
         android:textColor="@color/blue"
         android:textSize="20sp"
         app:backgroundTint="#fff"

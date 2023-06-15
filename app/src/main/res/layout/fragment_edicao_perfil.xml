@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".EditarPerfilFragment"
+    tools:context=".EditarPerfilActivity"
     android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +28,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="45dp"
             android:layout_marginEnd="30dp"
-            android:hint="Nome"
+            android:hint="@string/nome"
             app:layout_constraintTop_toBottomOf="@+id/imagemPerfil">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -45,7 +45,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginTop="45dp"
             android:layout_marginEnd="30dp"
-            android:hint="Email"
+            android:hint="@string/email"
             app:layout_constraintTop_toBottomOf="@+id/editNome">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -55,33 +55,38 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/outlinedTextField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginEnd="30dp"
-            android:hint="Telefone"
-            app:layout_constraintTop_toBottomOf="@+id/emailEdit">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTelefone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:id="@+id/filledButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Salvar"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_salvar"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_marginHorizontal="40dp"
+            android:backgroundTint="#0072C6"
+            android:text="@string/salvar"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/outlinedTextField" />
+            app:layout_constraintTop_toBottomOf="@+id/emailEdit" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_voltarPerfil"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="30dp"
+            android:layout_centerInParent="true"
+            android:backgroundTint="#0072C6"
+            android:text="@string/Voltar"
+            android:textColor="#FFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_salvar"
+            app:layout_constraintTop_toBottomOf="@+id/emailEdit" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
