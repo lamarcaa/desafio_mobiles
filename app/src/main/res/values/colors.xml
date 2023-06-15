@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="primary_blue">#50CDE8</color>
+    <color name="primary_blue">#1B84EA</color>
     <color name="secondary_blue">#245c69</color>
     <color name="ligth_blue">#dff9ff</color>
-    <color name="primary_red">#E8745A</color>
-    <color name="white">#fff</color>
-    <color name="black">#3a3a3a></color>
-    <color name="background">#F8F8F8</color>
+    <color name="primary_red">#FE2E2E</color>
+    <color name="white">#DADADA</color>
+    <color name="black">#7D7D7D</color>
+    <color name="background">#F5F5F5</color>
     <color name="txt_color_1">#7D7D7D</color>
-
 </resources>

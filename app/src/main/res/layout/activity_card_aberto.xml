@@ -55,7 +55,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:textColor="#245C69"
-                    android:text="Estágio em Desenvolvimento Web"
+                    android:text="@string/dadoTituloVaga"
                     android:textAppearance="?attr/textAppearanceTitleMedium"
                     android:textSize="24sp"
                     android:textStyle="bold" />
@@ -65,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Estágio em desenvolvimento web utilizando html, css, javascript e react (diferencial)."
+                    android:text="@string/dadoResumoVaga"
                     android:textAlignment="center"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="@color/txt_color_1"
@@ -77,7 +77,7 @@
                     android:gravity="start"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:text="INFORMAÇÕES DA VAGA"
+                    android:text="@string/dadoNomeEmpresa"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="#245C69"
                     android:textSize="18sp"
@@ -87,7 +87,7 @@
                     android:id="@+id/nome_empresa"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nome da Empresa: Microsoft"
+                    android:text="@string/dadoNomeEmpresa"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
@@ -97,7 +97,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="Área de Conhecimento: Tecnologia"
+                    android:text="@string/dadoAreaConhecimentoVaga"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -106,7 +106,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="Remuneração: R$ 1500.00"
+                    android:text="@string/dadoValorVaga"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -115,7 +115,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="Localidade: Ribeirão Preto"
+                    android:text="@string/dadoLocalidadeVaga"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -126,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
                     android:textSize="18sp"
-                    android:text="PERÍODO DE INSCRIÇÃO"
+                    android:text="@string/PeriodoInscricao"
                     android:textStyle="bold"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="#245C69" />
@@ -136,7 +136,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Data de Início: 01/04/2023"
+                    android:text="@string/dadoDataInicioVaga"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
@@ -146,14 +146,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="14sp"
-                    android:text="Data de Término: 29/04/2023"
-                    android:textAppearance="?attr/textAppearanceBodyMedium"
-                    android:textColor="?android:attr/textColorSecondary" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="14sp"
-                    android:text="Data de Término: 29/04/2023"
+                    android:text="@string/dadoDataTerminoVaga"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -164,7 +157,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="30dp"
                     android:textSize="18sp"
-                    android:text="ENTRE EM CONTATO:"
+                    android:text="@string/Contato"
                     android:textStyle="bold"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="#245C69" />
@@ -175,7 +168,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:textSize="14sp"
-                    android:text="Telefone: 16997310678"
+                    android:text="@string/dadoTelefoneVaga"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary" />
 
@@ -183,7 +176,7 @@
                     android:id="@+id/email"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Email: g.lamarca@outlook.com"
+                    android:text="@string/dadoEmailVaga"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary"
                     android:textSize="14sp" />
@@ -193,12 +186,12 @@
                     style="@style/Widget.Material3.Button.ElevatedButton"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:layout_marginTop="30dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
                     android:layout_marginBottom="20dp"
                     android:backgroundTint="#50CDE8"
-                    android:text="Voltar"
+                    android:text="@string/Voltar"
                     android:textColor="#FFF"
                     android:textSize="20sp"
                     android:textStyle="bold" />

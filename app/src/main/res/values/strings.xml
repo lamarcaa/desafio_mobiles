@@ -41,6 +41,10 @@
     <string name="dadoResumoVaga">%1$s</string>
     <string name="dadoLocalidadeVaga">%1$s</string>
     <string name="dadoValorVaga">%1$s</string>
+
+    <string name="PeriodoInscricao">PERÍODO DE INSCRIÇÂO</string>
+    <string name="Contato">ENTRE EM CONTATO</string>
+
     <string name="dadoTelefoneVaga">%1$s</string>
     <string name="dadoEmailVaga">%1$s</string>
     <string name="dadoDataInicioVaga">%1$s</string>

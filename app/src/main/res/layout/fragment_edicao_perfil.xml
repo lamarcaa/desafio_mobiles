@@ -57,36 +57,61 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_salvar"
+            android:id="@+id/btnVoltarPerfil"
             style="@style/Widget.Material3.Button.ElevatedButton"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_centerInParent="true"
-            android:layout_marginHorizontal="40dp"
-            android:backgroundTint="#0072C6"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/white"
+            app:strokeWidth="2dp"
+            app:strokeColor="@color/primary_blue"
+            android:text="@string/sairPerfil"
+            android:textColor="@color/primary_blue"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/emailEdit" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSalvar"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/primary_blue"
             android:text="@string/salvar"
             android:textColor="#FFF"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/btnVoltarPerfil"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailEdit" />
+            app:layout_constraintTop_toBottomOf="@id/emailEdit" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btn_voltarPerfil"
+            android:id="@+id/btn_deletarConta"
             style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="150dp"
-            android:layout_height="60dp"
-            android:layout_marginLeft="30dp"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="50dp"
+            android:layout_height="55dp"
+            android:layout_marginBottom="38dp"
             android:layout_centerInParent="true"
-            android:backgroundTint="#0072C6"
-            android:text="@string/Voltar"
+            android:backgroundTint="@color/primary_red"
+            android:text="@string/deletarPerfil"
             android:textColor="#FFF"
             android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/btn_salvar"
-            app:layout_constraintTop_toBottomOf="@+id/emailEdit" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSalvar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -23,7 +23,6 @@ class CardOpenActivity : AppCompatActivity() {
     val db = Firebase.firestore
 
     private lateinit var binding: ActivityCardAbertoBinding
-    private lateinit var bindingCards: FragmentListaVagasBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -72,6 +71,10 @@ class CardOpenActivity : AppCompatActivity() {
                 val intentLigacao = Intent(Intent.ACTION_CALL, Uri.parse("tel:$telefone"))
                 startActivity(intentLigacao)
             }
+        }
+
+        binding.btnVoltar.setOnClickListener{
+            finish()
         }
 
 
