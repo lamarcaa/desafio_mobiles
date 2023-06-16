@@ -24,7 +24,13 @@ class CadastroContaActivity : AppCompatActivity() {
 
         binding.bntCadastrar.setOnClickListener {
 
-            if (binding.cadSenha.text.toString().isEmpty()) {
+            if (binding.tipoInteressado.isEnabled == true)
+            {
+                Toast.makeText(this, "interessado", Toast.LENGTH_SHORT).show()
+            }
+
+            if (binding.cadNome.text.toString().isEmpty() || binding.cadEmail.text.toString().isEmpty() ||
+                    binding.cadSenha.text.toString().isEmpty() || binding.confSenha.toString().isEmpty()){
 
                 Toast.makeText(this, "Campos nao preenchidos", Toast.LENGTH_SHORT).show()
 

@@ -19,7 +19,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/logo" />
+            tools:src="@drawable/icon_login" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/editNome"
@@ -65,7 +65,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginEnd="40dp"
             android:layout_marginBottom="20dp"
-            android:backgroundTint="@color/white"
+            android:backgroundTint="@color/background"
             app:strokeWidth="2dp"
             app:strokeColor="@color/primary_blue"
             android:text="@string/sairPerfil"

@@ -17,7 +17,7 @@
     <string name="confirmarSenha">Confirmar Senha</string>
     <string name="interessado">INTERESSADO</string>
     <string name="anunciante">ANUNCIANTE</string>
-    <string name="efetuarCadastro">Efetuar Cadastro</string>
+    <string name="efetuarCadastro">Cadastrar</string>
 
     <!--    tela de cadastro vaga-->
 
@@ -64,6 +64,8 @@
     <string name="area">Area: %1$s</string>
     <string name="remuneracao">Remuneração: %1$s</string>
     <string name="localidade">Localidade: %1$s</string>
+    <string name="visualizar">Visualizar</string>
+    <string name="deletarCard">Deletar</string>
 
     <!--    Perfil-->
     <string name="dadosPerfil">SUAS INFORMAÇÕES</string>

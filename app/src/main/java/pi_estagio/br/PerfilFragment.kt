@@ -49,7 +49,6 @@ class PerfilFragment : Fragment() {
             }
 
 
-
         binding.btnEditarPerfil.setOnClickListener {
 
 

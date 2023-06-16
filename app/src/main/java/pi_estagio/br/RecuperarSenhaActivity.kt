@@ -23,21 +23,29 @@ class RecuperarSenhaActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btnEnviarEmail.setOnClickListener {
-            auth.sendPasswordResetEmail(binding.recuperarSenha.text.toString())
-                .addOnCompleteListener {task ->
-                    if (task.isSuccessful) {
-                        Toast.makeText(this, "Verifique a sua caixa de email", Toast.LENGTH_LONG)
-                            .show()
-                    val voltarTelaInicial = Intent(this, MainActivity::class.java)
-                    startActivity(voltarTelaInicial)
-                    finish()
-                    } else {
-                        if (task.exception is FirebaseAuthEmailException) {
-                            Toast.makeText(this, "Email inválido", Toast.LENGTH_LONG).show()
+
+            if(binding.recuperarSenha.text.toString().isEmpty()){
+                Toast.makeText(this, "Campo nao preenchido", Toast.LENGTH_SHORT).show()
+            }else{
+
+                auth.sendPasswordResetEmail(binding.recuperarSenha.text.toString())
+                    .addOnCompleteListener {task ->
+                        if (task.isSuccessful) {
+                            Toast.makeText(this, "Verifique a sua caixa de email", Toast.LENGTH_LONG)
+                                .show()
+                            val voltarTelaInicial = Intent(this, MainActivity::class.java)
+                            startActivity(voltarTelaInicial)
+                            finish()
+                        } else {
+                            if (task.exception is FirebaseAuthEmailException) {
+                                Toast.makeText(this, "Email inválido", Toast.LENGTH_LONG).show()
+                            }
+                            Toast.makeText(this, "Ocorreu um erro", Toast.LENGTH_LONG).show()
                         }
-                        Toast.makeText(this, "Ocorreu um erro", Toast.LENGTH_LONG).show()
                     }
-                }
+
+            }
+
         }
 
         binding.btnVoltarTi.setOnClickListener() {

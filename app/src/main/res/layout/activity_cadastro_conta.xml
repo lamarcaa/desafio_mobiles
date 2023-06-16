@@ -107,7 +107,7 @@
         android:id="@+id/tipoInteressado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:checked="false"
+        android:checked="true"
         android:text="@string/interessado"/>
 
     <CheckBox
@@ -116,6 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/cad_conf_senha"
         android:layout_centerInParent="true"
+
         android:layout_marginTop="20dp"
         android:layout_toRightOf="@+id/tipoInteressado"
         android:text="@string/anunciante" />

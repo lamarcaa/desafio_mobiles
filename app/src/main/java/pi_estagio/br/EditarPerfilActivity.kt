@@ -29,37 +29,38 @@ class EditarPerfilActivity: AppCompatActivity() {
         binding = FragmentEdicaoPerfilBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
-
         binding.btnSalvar.setOnClickListener{
-            val usuarioAtual = FirebaseAuth.getInstance().currentUser
 
-            val user = Firebase.auth.currentUser
+            if (binding.editarEmail.text.toString().isEmpty() || binding.editarNome.text.toString().isEmpty()){
+                Toast.makeText(this, "Campos não preenchidos", Toast.LENGTH_SHORT).show()
+            }else{
 
-            if (usuarioAtual != null){
-                val idUsuario = usuarioAtual.uid
+                val usuarioAtual = FirebaseAuth.getInstance().currentUser
 
-                user!!.updateEmail(binding.editarEmail.text.toString()).addOnCompleteListener { task ->
-                    if (task.isSuccessful){
-                        Log.d(TAG,"Email atualizado")
-                    }
-                }
+                val user = Firebase.auth.currentUser
 
-                db.collection("Usuario").document(idUsuario)
-                    .update("nomeUsuario",binding.editarNome.text.toString(),
-                        "email_user", binding.editarEmail.text.toString())
-                    .addOnCompleteListener { task ->
-                        if(task.isSuccessful){
-                            val intentVoltarLogin = Intent(this, MainActivity::class.java)
-                            startActivity(intentVoltarLogin)
-                            finish()
-                        }else{
-                            Toast.makeText(this, "Houve um erro, não foi possível salvar os dados!", Toast.LENGTH_SHORT).show()
+                if (usuarioAtual != null){
+                    val idUsuario = usuarioAtual.uid
+
+                    user!!.updateEmail(binding.editarEmail.text.toString()).addOnCompleteListener { task ->
+                        if (task.isSuccessful){
+                            Log.d(TAG,"Email atualizado")
                         }
-
                     }
 
+                    db.collection("Usuario").document(idUsuario)
+                        .update("nomeUsuario",binding.editarNome.text.toString(),
+                            "email_user", binding.editarEmail.text.toString())
+                        .addOnCompleteListener { task ->
+                            if(task.isSuccessful){
+                                val intentVoltarLogin = Intent(this, MainActivity::class.java)
+                                startActivity(intentVoltarLogin)
+                                finish()
+                            }else{
+                                Toast.makeText(this, "Houve um erro, não foi possível salvar os dados!", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                }
             }
         }
 

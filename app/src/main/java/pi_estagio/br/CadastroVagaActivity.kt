@@ -29,7 +29,11 @@ class CadastroVagaActivity : Fragment() {
 
         binding.btnCadastarVaga.setOnClickListener {
 
-            if (binding.cadastroTitulo.toString().isEmpty()) {
+            if (binding.anuncianteVaga.text.toString().isEmpty() || binding.tituloVaga.text.toString().isEmpty() ||
+                    binding.resumoVaga.text.toString().isEmpty() || binding.areaConhecimentoVaga.text.toString().isEmpty() ||
+                    binding.localidadeVaga.text.toString().isEmpty() || binding.remuneracaoVaga.text.toString().isEmpty() ||
+                    binding.telefoneVaga.text.toString().isEmpty() || binding.emailVaga.text.toString().isEmpty() ||
+                    binding.emailVaga.text.toString().isEmpty()){
                 Toast.makeText(requireContext(), "Campos não preenchidos", Toast.LENGTH_SHORT)
                     .show()
             } else {
